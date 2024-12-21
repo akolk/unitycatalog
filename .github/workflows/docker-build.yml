@@ -9,18 +9,18 @@ on:
   pull_request:
     branches:
       - main
-      
-permissions:
-  packages: write
-  contents: read
-  
+    
 env:
-  IMAGE: ghcr.io/${{ github.repository }} # Using GitHub Container Registry
+  IMAGE: ${{ github.repository }} # Using GitHub Container Registry
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+      
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
