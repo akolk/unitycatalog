@@ -2,6 +2,7 @@
 ARG HOME="/home/unitycatalog"
 ARG ALPINE_VERSION="3.20"
 
+
 # Build stage, using Amazon Corretto jdk 17 on alpine with arm64 support
 FROM amazoncorretto:17-alpine${ALPINE_VERSION}-jdk as base
 
