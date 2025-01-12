@@ -1,6 +1,9 @@
 # syntax=docker.io/docker/dockerfile:1.7-labs
 FROM node:18
 
+# jq --arg proxy "http://$PROXY_HOST:8080" '.proxy = $proxy' package.json > temp.json
+# mv temp.json package.json
+
 ARG PROXY_HOST=server
 WORKDIR /ui
 
@@ -12,8 +15,6 @@ RUN <<EOF
 set -ex
 apt-get update
 apt-get install -y jq
-jq --arg proxy "http://$PROXY_HOST:8080" '.proxy = $proxy' package.json > temp.json
-mv temp.json package.json
 yarn install
 apt-get clean
 EOF
