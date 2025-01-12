@@ -15,7 +15,7 @@ RUN <<EOF
 set -ex
 apt-get update
 apt-get install -y jq
-yarn install
+yarn install --network-timeout 100000
 apt-get clean
 EOF
 
