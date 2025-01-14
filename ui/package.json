@@ -2,6 +2,7 @@
   "name": "unitycatalog-ui",
   "version": "0.1.0",
   "private": true,
+  "proxy": "uc-server.internal.anjokolk.com",
   "dependencies": {
     "@ant-design/icons": "^5.3.7",
     "@okta/okta-auth-js": "^7.7.0",
