@@ -15,6 +15,8 @@ RUN <<EOF
 set -ex
 apt-get update
 apt-get install -y jq
+jq --arg proxy "http://$PROXY_HOST" '.proxy = $proxy' package.json > temp.json
+mv temp.json package.json
 yarn install --network-timeout 100000
 apt-get clean
 EOF
